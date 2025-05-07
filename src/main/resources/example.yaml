@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Hello World API
+  description: A simple API that says hello to the provided name
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+paths:
+  /hello:
+    post:
+      summary: Say hello to a person
+      description: Returns a greeting message for the provided name
+      operationId: sayHello
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: The name of the person to greet
+                  example: "John"
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Greeting message
+                    example: "hi John"
