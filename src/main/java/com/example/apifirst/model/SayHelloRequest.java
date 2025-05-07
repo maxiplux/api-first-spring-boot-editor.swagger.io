@@ -39,7 +39,7 @@ public class SayHelloRequest {
    * @return name
    */
   @NotNull 
-  @Schema(name = "name", example = "John", description = "The name of the person to greet", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "name", example = "John", description = "The name of the person to greet", required = true)
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -86,4 +86,3 @@ public class SayHelloRequest {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
